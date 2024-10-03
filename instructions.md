@@ -301,19 +301,28 @@ my-app/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── signup/
 │   │   │   │       └── page.tsx
-│   │   │   ├── (userdashboard)/
-│   │   │   │   ├── wallet/
-│   │   │   │   │   └── page.tsx
-│   │   │   │   ├── buy/
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── withdraw/
+│   │   │   ├── landing/                            # Landing page at the root
+│   │   │   │   └── page.tsx                         # Landing Page
+│   │   │   ├── (user)/                             # User routes
+│   │   │   │   ├── userdashboard/                  # User dashboard
+│   │   │   │   │   ├── page.tsx                    # User dashboard main page
+│   │   │   │   │   ├── WalletContent.tsx           # Component for wallet display
+│   │   │   │   │   ├── BuyForm.tsx                 # Buy crypto form
+│   │   │   │   │   ├── WithdrawForm.tsx            # Withdraw form
+│   │   │   │   │   └── CryptoTable.tsx             # Crypto prices table
+│   │   │   │   └── wallet/                          # Wallet pages
 │   │   │   │       └── page.tsx
-│   │   │   ├── (admindashboard)/
-│   │   │   │   ├── user-list/
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── transaction-status/
+│   │   │   ├── (admin)/                             # Admin routes
+│   │   │   │   ├── admindashboard/                 # Admin dashboard
+│   │   │   │   │   ├── page.tsx                    # Admin dashboard main page
+│   │   │   │   │   ├── UserList.tsx                # User list
+│   │   │   │   │   └── TransactionStatusManager.tsx # Transaction status management
+│   │   │   │   └── user-list/                       # User management pages
 │   │   │   │       └── page.tsx
-│   │   │   └── page.tsx
+│   │   │   │   └── transaction-status/             # Transaction status pages
+│   │   │   │       └── page.tsx
+│   │   │   └── page.tsx                             # Default page (e.g., home)
+│   │   └── layout.tsx                               # Global layout
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Navbar.tsx
@@ -321,32 +330,32 @@ my-app/
 │   │   │   └── Footer.tsx
 │   │   ├── user/
 │   │   │   ├── WalletInfo.tsx
-│   │   │   ├── CryptoTable.tsx
-│   │   │   ├── TransactionHistory.tsx
 │   │   │   ├── BuyForm.tsx
-│   │   │   └── WithdrawForm.tsx
-│   │   └── admin/
-│   │       ├── UserList.tsx
-│   │       └── TransactionStatusManager.tsx
+│   │   │   ├── WithdrawForm.tsx
+│   │   │   └── TransactionHistory.tsx
+│   │   ├── admin/
+│   │   │   ├── UserList.tsx
+│   │   │   ├── UserDetail.tsx
+│   │   │   └── TransactionStatusManager.tsx
 │   ├── hooks/
 │   │   ├── useWallet.ts
-│   │   └── useCryptoPrice.ts
+│   │   ├── useCryptoPrice.ts
 │   ├── services/
 │   │   ├── api.ts
 │   │   └── auth.ts
 │   ├── styles/
 │   │   └── globals.css
-│   └── utils/
-│       ├── constants.ts
-│       └── helpers.ts
-├── public/
-│   └── images/
-├── messages/
-│   ├── en.json
-│   └── fr.json
-├── tailwind.config.ts
-├── next.config.js
-└── package.json
+│   ├── utils/
+│   │   ├── constants.ts
+│   │   └── helpers.ts
+│   ├── public/
+│   │   └── images/
+│   ├── messages/
+│   │   ├── en.json
+│   │   └── fr.json
+│   ├── tailwind.config.ts
+│   ├── next.config.js
+│   └── package.json
 ```
 
 ### Implementation Guidelines
@@ -410,3 +419,40 @@ Integrate with a free cryptocurrency price API (e.g., CoinGecko or CryptoCompare
 3. Consider using a service like Vercel for easy deployment of Next.js applications.
 
 This updated PRD reflects the correct structure for both user and admin dashboards, with accurate sidebar navigation and main content areas.
+
+### Landing Page (Home)
+
+src/app/[locale]/landing/page.tsx: The landing page displayed at the root before redirecting the user to login or their respective dashboards. This page can include information about your platform, links to sign up/log in, etc.
+If the user is already authenticated, you can handle the redirection to the user or admin dashboard based on their role.
+
+#### Example redirection in page.tsx for the landing page:
+
+```tsx
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react"; // or Clerk if you're using Clerk for auth
+
+const LandingPage = () => {
+  const router = useRouter();
+  const { data: session } = useSession(); // Hook to check if user is logged in
+
+  useEffect(() => {
+    if (session) {
+      if (session.user.role === "admin") {
+        router.push("/admindashboard");
+      } else {
+        router.push("/userdashboard");
+      }
+    }
+  }, [session, router]);
+
+  return (
+    <div>
+      <h1>Welcome to our platform</h1>
+      {/* Landing page content */}
+    </div>
+  );
+};
+
+export default LandingPage;
+```
