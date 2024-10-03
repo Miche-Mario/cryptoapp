@@ -292,70 +292,61 @@ Routes:
 ### File Structure
 
 ```
-my-app/
-├── src/
-│   ├── app/
-│   │   ├── [locale]/
-│   │   │   ├── (auth)/
-│   │   │   │   ├── login/
-│   │   │   │   │   └── page.tsx
-│   │   │   │   └── signup/
-│   │   │   │       └── page.tsx
-│   │   │   ├── landing/                            # Landing page at the root
-│   │   │   │   └── page.tsx                         # Landing Page
-│   │   │   ├── (user)/                             # User routes
-│   │   │   │   ├── userdashboard/                  # User dashboard
-│   │   │   │   │   ├── page.tsx                    # User dashboard main page
-│   │   │   │   │   ├── WalletContent.tsx           # Component for wallet display
-│   │   │   │   │   ├── BuyForm.tsx                 # Buy crypto form
-│   │   │   │   │   ├── WithdrawForm.tsx            # Withdraw form
-│   │   │   │   │   └── CryptoTable.tsx             # Crypto prices table
-│   │   │   │   └── wallet/                          # Wallet pages
-│   │   │   │       └── page.tsx
-│   │   │   ├── (admin)/                             # Admin routes
-│   │   │   │   ├── admindashboard/                 # Admin dashboard
-│   │   │   │   │   ├── page.tsx                    # Admin dashboard main page
-│   │   │   │   │   ├── UserList.tsx                # User list
-│   │   │   │   │   └── TransactionStatusManager.tsx # Transaction status management
-│   │   │   │   └── user-list/                       # User management pages
-│   │   │   │       └── page.tsx
-│   │   │   │   └── transaction-status/             # Transaction status pages
-│   │   │   │       └── page.tsx
-│   │   │   └── page.tsx                             # Default page (e.g., home)
-│   │   └── layout.tsx                               # Global layout
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Navbar.tsx
-│   │   │   ├── Sidebar.tsx
-│   │   │   └── Footer.tsx
-│   │   ├── user/
-│   │   │   ├── WalletInfo.tsx
-│   │   │   ├── BuyForm.tsx
-│   │   │   ├── WithdrawForm.tsx
-│   │   │   └── TransactionHistory.tsx
-│   │   ├── admin/
-│   │   │   ├── UserList.tsx
-│   │   │   ├── UserDetail.tsx
-│   │   │   └── TransactionStatusManager.tsx
-│   ├── hooks/
-│   │   ├── useWallet.ts
-│   │   ├── useCryptoPrice.ts
-│   ├── services/
-│   │   ├── api.ts
-│   │   └── auth.ts
-│   ├── styles/
-│   │   └── globals.css
-│   ├── utils/
-│   │   ├── constants.ts
-│   │   └── helpers.ts
-│   ├── public/
-│   │   └── images/
-│   ├── messages/
-│   │   ├── en.json
-│   │   └── fr.json
-│   ├── tailwind.config.ts
-│   ├── next.config.js
-│   └── package.json
+MY-APP
+├── .next
+├── messages
+├── node_modules
+├── src
+│   ├── app
+│   │   ├── (locale)
+│   │   ├── (admin)
+│   │   │   └── admin-dashboard
+│   │   │       ├── transaction-status
+│   │   │       │   ├── layout.tsx
+│   │   │       │   └── page.tsx
+│   │   ├── (user)
+│   │   │   └── dashboard
+│   │   │       ├── buy
+│   │   │       │   ├── layout.tsx
+│   │   │       │   ├── loading.tsx
+│   │   │       │   └── page.tsx
+│   ├── fonts
+│   │   ├── favicon.ico
+│   │   ├── global.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+├── components
+│   ├── admin
+│   │   ├── TransactionStatusManager.tsx
+│   │   └── UserList.tsx
+│   ├── layout
+│   │   ├── DashboardLayout.tsx
+│   │   ├── Navbar.tsx
+│   │   └── Sidebar.tsx
+│   ├── user
+│   │   ├── BuyForm.tsx
+│   │   ├── WalletContent.tsx
+│   │   ├── WithdrawForm.tsx
+│   │   ├── CryptoDashboard.tsx
+│   │   ├── FAQ.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   └── Navbar.tsx
+├── i18n
+│   ├── middleware.ts
+│   ├── i18n.ts
+├── .gitignore
+├── tailwind.config.ts
+├── instructions copy.md
+├── instructions.md
+├── next-env.d.ts
+├── next.config.js
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.json
+└── yarn.lock
 ```
 
 ### Implementation Guidelines

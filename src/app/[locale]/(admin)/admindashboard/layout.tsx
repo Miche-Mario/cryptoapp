@@ -10,10 +10,10 @@ const AdminDashboardLayout: React.FC<{ children: React.ReactNode }> = ({
   const locale = params.locale as string;
 
   const adminSidebarItems = [
-    { label: "User List", route: `/${locale}/admin/admindashboard` },
+    { label: "User List", route: `/${locale}/admindashboard` },
     {
       label: "Transaction Status",
-      route: `/${locale}/admin/admindashboard/transaction-status`,
+      route: `/${locale}/admindashboard/transaction-status`,
     },
   ];
 
