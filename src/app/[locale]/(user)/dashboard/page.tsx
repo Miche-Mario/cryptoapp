@@ -1,5 +1,10 @@
 import React from "react";
-import WalletContent from "@/components/user/WalletContent";
+import dynamic from "next/dynamic";
+
+const WalletContent = dynamic(() => import("@/components/user/WalletContent"), {
+  ssr: false,
+  loading: () => <p>Loading wallet content...</p>,
+});
 
 const DashboardPage: React.FC = () => {
   return (
