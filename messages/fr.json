@@ -1,0 +1,74 @@
+{
+  "home": {
+    "title": "Révolutionnez Votre Approche des Crypto-monnaies",
+    "description": "Accédez aux données en temps réel, prenez des décisions éclairées et maximisez vos investissements avec notre plateforme de pointe.",
+    "getStarted": "Commencer Gratuitement"
+  },
+  "navbar": {
+    "logo": "CryptoApp",
+    "features": "Fonctionnalités",
+    "faq": "FAQ",
+    "signIn": "Connexion",
+    "signUp": "Inscription"
+  },
+  "cryptoDashboard": {
+    "title": "Top des Cryptomonnaies",
+    "rank": "Rang",
+    "name": "Nom",
+    "price": "Prix",
+    "change24h": "Variation 24h",
+    "marketCap": "Capitalisation",
+    "volume": "Volume"
+  },
+  "Hero": {
+    "title": "Bienvenue sur",
+    "highlight": "CryptoTracker Pro",
+    "description": "Votre solution tout-en-un pour suivre, analyser et d'achat de cryptomonnaies. Obtenez des données de marché en temps réel, des analyses avancées et des informations personnalisées pour rester en tête dans le monde des cryptos.",
+    "cta_primary": "Commencer le suivi",
+    "cta_secondary": "En savoir plus"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "q1": "Qu'est-ce que CryptoTracker Pro ?",
+    "a1": "CryptoTracker Pro est une plateforme tout-en-un pour suivre, analyser et gérer votre portefeuille de cryptomonnaies. Elle fournit des données de marché en temps réel, des analyses avancées et des informations personnalisées pour vous aider à prendre des décisions éclairées dans le monde des cryptos.",
+    "q2": "Comment CryptoTracker Pro assure-t-il la sécurité de mes données ?",
+    "a2": "Nous priorisons la sécurité de vos données en mettant en œuvre des protocoles de cryptage standard de l'industrie, des audits de sécurité réguliers et des contrôles d'accès stricts. Vos informations personnelles et les détails de votre portefeuille sont gardés confidentiels et protégés en permanence.",
+    "q3": "Puis-je suivre plusieurs cryptomonnaies simultanément ?",
+    "a3": "Oui, CryptoTracker Pro vous permet de suivre et de gérer plusieurs cryptomonnaies dans votre portefeuille. Vous pouvez ajouter, supprimer et surveiller divers actifs numériques, le tout au même endroit.",
+    "q4": "CryptoTracker Pro convient-il aux débutants ?",
+    "a4": "Absolument ! Bien que CryptoTracker Pro offre des fonctionnalités avancées pour les traders expérimentés, il est également conçu en pensant aux débutants. Nous fournissons des ressources éducatives, des interfaces conviviales et des infobulles utiles pour vous guider tout au long de votre parcours crypto.",
+    "q5": "À quelle fréquence les données du marché sont-elles mises à jour ?",
+    "a5": "Notre plateforme récupère et met à jour les données du marché en temps réel, vous assurant d'avoir toujours accès aux informations les plus récentes. Cela vous permet de prendre des décisions opportunes basées sur les dernières tendances et mouvements du marché."
+  },
+  "footer": {
+    "description": "Rendre le monde meilleur en construisant des hiérarchies élégantes.",
+    "solutions": "Solutions",
+    "support": "Support",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "companyName": "CryptoTracker Pro, Inc.",
+    "allRightsReserved": "Tous droits réservés.",
+    "solutions": {
+      "tracking": "Suivi Crypto",
+      "analytics": "Analyses",
+      "commerce": "Commerce",
+      "insights": "Insights"
+    },
+    "support": {
+      "pricing": "Tarification",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "api-status": "Statut de l'API"
+    },
+    "company": {
+      "about": "À propos",
+      "blog": "Blog",
+      "jobs": "Emplois",
+      "press": "Presse"
+    },
+    "legal": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "home": {
+    "title": "Revolutionize Your Crypto Approach",
+    "description": "Access real-time data, make informed decisions, and maximize your investments with our cutting-edge platform.",
+    "getStarted": "Start for Free"
+  },
+  "navbar": {
+    "logo": "CryptoApp",
+    "features": "Features",
+    "faq": "FAQ",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "cryptoDashboard": {
+    "title": "Top Cryptocurrencies",
+    "rank": "Rank",
+    "name": "Name",
+    "price": "Price",
+    "change24h": "24h Change",
+    "marketCap": "Market Cap",
+    "volume": "Volume"
+  },
+  "Hero": {
+    "title": "Welcome to",
+    "highlight": "CryptoTracker Pro",
+    "description": "Your all-in-one solution for tracking, analyzing, and buying cryptocurrency. Get real-time market data, advanced analytics, and personalized insights to stay ahead in the crypto world.",
+    "cta_primary": "Start Tracking",
+    "cta_secondary": "Learn More"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What is CryptoTracker Pro?",
+    "a1": "CryptoTracker Pro is an all-in-one platform for tracking, analyzing, and managing your cryptocurrency portfolio. It provides real-time market data, advanced analytics, and personalized insights to help you make informed decisions in the crypto world.",
+    "q2": "How does CryptoTracker Pro ensure the security of my data?",
+    "a2": "We prioritize the security of your data by implementing industry-standard encryption protocols, regular security audits, and strict access controls. Your personal information and portfolio details are kept confidential and protected at all times.",
+    "q3": "Can I track multiple cryptocurrencies simultaneously?",
+    "a3": "Yes, CryptoTracker Pro allows you to track and manage multiple cryptocurrencies in your portfolio. You can add, remove, and monitor various digital assets all in one place.",
+    "q4": "Is CryptoTracker Pro suitable for beginners?",
+    "a4": "Absolutely! While CryptoTracker Pro offers advanced features for experienced traders, it's also designed with beginners in mind. We provide educational resources, user-friendly interfaces, and helpful tooltips to guide you through your crypto journey.",
+    "q5": "How often is the market data updated?",
+    "a5": "Our platform fetches and updates market data in real-time, ensuring that you always have access to the most current information. This allows you to make timely decisions based on the latest market trends and movements."
+  },
+  "footer": {
+    "description": "Making the world a better place through constructing elegant hierarchies.",
+    "solutions": "Solutions",
+    "support": "Support",
+    "company": "Company",
+    "legal": "Legal",
+    "companyName": "CryptoTracker Pro, Inc.",
+    "allRightsReserved": "All rights reserved.",
+    "solutions": {
+      "tracking": "Crypto Tracking",
+      "analytics": "Analytics",
+      "commerce": "Commerce",
+      "insights": "Insights"
+    },
+    "support": {
+      "pricing": "Pricing",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "api-status": "API Status"
+    },
+    "company": {
+      "about": "About",
+      "blog": "Blog",
+      "jobs": "Jobs",
+      "press": "Press"
+    },
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    }
+  }
+}

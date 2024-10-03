@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme */
+  --primary-default: #020c26; /* Nouvelle couleur principale */
+  --primary-secondary: #0e3062; /* Nouvelle couleur secondaire */
+  --primary-tertiary: #a67c00; /* Couleur inchangée */
+  --primary-contrast: #e5edff;
+
+  --light-default: #c0c0c0 /* Light gray */;
+  --light-secondary: #e0e0e0;
+  --light-tertiary: #999999;
+  --light-contrast: #333333;
+
+  /* Surface Colors */
+  --surface-default: #ffffff;
+  --surface-secondary: #f3f4f6;
+  --surface-tertiary: #e5e7eb;
+
+  /* Content Colors */
+  --content-default: #1f2937;
+  --content-secondary: #4b5563;
+  --content-tertiary: #9ca3af;
+
+  /* Border Colors */
+  --solid-100: #e0e0e0;
+  --solid-200: #c0c0c0;
+  --solid-300: #a0a0a0;
+  --solid-400: #808080;
+  --solid-500: #606060;
+}
+
+.dark {
+  --primary-default: #020c26; /* Nouvelle couleur principale */
+  --primary-secondary: #0e3062; /* Nouvelle couleur secondaire */
+  --primary-tertiary: #071c47; /* Couleur inchangée */
+  --primary-contrast: #e5edff;
+
+  --light-default: #020c26; /* Nouvelle couleur principale */
+  --light-secondary: #0e3062; /* Nouvelle couleur secondaire */
+  --light-tertiary: #071c47; /* Couleur inchangée */
+  --light-contrast: #ffffff;
+
+  /* Accent Colors */
+  --accent-default: #7f7f7f;
+  --accent-secondary: #a0a0a0;
+  --accent-tertiary: #666666;
+  --accent-contrast: #cccccc;
+
+  /* Surface Colors */
+  --surface-default: #000000;
+  --surface-secondary: #161616;
+  --surface-tertiary: #2c2c2c;
+
+  /* Content Colors */
+  --content-default: #ffffff;
+  --content-secondary: #777777;
+  --content-tertiary: #999999;
+
+  /* Solid Border Colors */
+  --solid-100: hsla(0, 0%, 100%, 0.04);
+  --solid-200: hsla(0, 0%, 100%, 0.08);
+  --solid-300: hsla(0, 0%, 100%, 0.12);
+  --solid-400: hsla(0, 0%, 100%, 0.16);
+  --solid-500: hsla(0, 0%, 100%, 0.2);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  background: var(--surface-tertiary);
+  color: var(--content-default);
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  background-color: var(--surface-secondary);
+  color: var(--content-default);
+}
+
+.custom-table .ant-table-tbody > tr:hover {
+  background-color: var(--light-default);
+  color: var(--content-default);
+}
+
+.custom-table .ant-table-tbody > tr:hover > td:hover {
+  background-color: var(--light-default);
+  color: var(--content-default);
+}
