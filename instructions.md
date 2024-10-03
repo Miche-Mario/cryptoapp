@@ -11,7 +11,10 @@ We are building a virtual cryptocurrency exchange platform where users can have 
 - Implement Login / Signup functionality
 - Buttons for these actions are already provided in the Navbar
 
-Dashboard Layout Structure
+### 2. User Dashboard
+
+# Dashboard Layout Structure
+
 Both the user and admin dashboards follow a consistent layout structure composed of three main elements: Navbar, Sidebar, and Main Content. This structure ensures a uniform user experience and simplifies navigation throughout the application.
 Layout Composition
 
@@ -52,23 +55,6 @@ Wallet: Displays wallet information, balance, and transaction history
 Buy: Shows the cryptocurrency purchase form
 Withdraw: Presents the withdrawal form
 
-Admin Dashboard Structure
-Navbar
-
-Admin profile picture
-Dropdown menu to logout
-
-Sidebar
-
-UserList
-Transaction Status
-
-Main Content
-Changes based on the selected sidebar item:
-
-UserList: Displays the list of all users and their details
-Transaction Status: Shows all transactions and status management options
-
 Implementation Guidelines for Layout Structure
 
 Use Next.js Layout Pattern
@@ -91,31 +77,14 @@ Responsive Design
 Implement a responsive design that adapts the layout for different screen sizes
 Consider a collapsible sidebar for mobile views
 
-Here's an example of how the layout component might be structured:
-tsxCopy// src/components/layout/DashboardLayout.tsx
+User Routes
+Group all user-related pages under the /userdashboard route. This way, the entire layout (navbar, sidebar, and content) will load when the user navigates to /userdashboard, and the main content will dynamically change based on the user's selections.
 
-import React from 'react';
-import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+For example:
 
-interface DashboardLayoutProps {
-children: React.ReactNode;
-sidebarItems: Array<{ label: string; route: string }>;
-}
-
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, sidebarItems }) => {
-return (
-<div className="flex flex-col h-screen">
-<Navbar />
-<div className="flex flex-1 overflow-hidden">
-<Sidebar items={sidebarItems} />
-<main className="flex-1 overflow-y-auto p-4">
-{children}
-</main>
-</div>
-</div>
-);
-};
+/userdashboard/wallet
+/userdashboard/buy
+/userdashboard/withdraw
 
 export default DashboardLayout;
 This layout component can then be used in your page components:
@@ -130,6 +99,45 @@ const userSidebarItems = [
 { label: 'Withdraw', route: '/withdraw' },
 ];
 
+// src/components/layout/DashboardLayout.tsx
+
+import React from 'react';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+
+interface DashboardLayoutProps {
+children: React.ReactNode;
+sidebarItems: Array<{ label: string; route: string }>;
+}
+
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, sidebarItems }) => {
+return (
+
+<div className="flex flex-col h-screen">
+<Navbar />
+<div className="flex flex-1 overflow-hidden">
+<Sidebar items={sidebarItems} />
+<main className="flex-1 overflow-y-auto p-4">
+{children}
+</main>
+</div>
+</div>
+);
+};
+
+export default DashboardLayout;
+
+src/app/[locale]/(userdashboard)/wallet/page.tsx
+
+import DashboardLayout from '@/components/layout/DashboardLayout';
+import WalletContent from '@/components/user/WalletContent';
+
+const userSidebarItems = [
+{ label: 'Wallet', route: '/userdashboard/wallet' },
+{ label: 'Buy', route: '/userdashboard/buy' },
+{ label: 'Withdraw', route: '/userdashboard/withdraw' },
+];
+
 const WalletPage = () => {
 return (
 <DashboardLayout sidebarItems={userSidebarItems}>
@@ -139,9 +147,6 @@ return (
 };
 
 export default WalletPage;
-By using this layout structure, you ensure consistency across the application while allowing the main content to change dynamically based on user navigation. The sidebar remains constant within each dashboard (user or admin), providing easy access to all main features, while the main content area updates to reflect the selected item.
-
-### 2. User Dashboard
 
 #### a. Top Navbar
 
@@ -296,20 +301,19 @@ my-app/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── signup/
 │   │   │   │       └── page.tsx
-│   │   │   ├── (user)/
+│   │   │   ├── (userdashboard)/
 │   │   │   │   ├── wallet/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   ├── buy/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── withdraw/
 │   │   │   │       └── page.tsx
-│   │   │   ├── (admin)/
+│   │   │   ├── (admindashboard)/
 │   │   │   │   ├── user-list/
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── transaction-status/
 │   │   │   │       └── page.tsx
 │   │   │   └── page.tsx
-│   │   └── layout.tsx
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Navbar.tsx
